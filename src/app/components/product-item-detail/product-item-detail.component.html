@@ -1,1 +1,19 @@
-<p>product-item-detail works!</p>
+<div class="row match-height">
+    <div class="card mt-5" style="max-width: 700px;">
+        <div class="row no-gutters">
+            <div class="col-md-6">
+                <img src="{{myProduct.url}}" class="card-img-top" alt="{{myProduct.name}}">
+            </div>
+            <div class="col-md-6">
+                <div class="card-body">
+                    <h5 class="card-title">{{myProduct.name}}</h5>
+                    <p class="card-text">{{myProduct.description}}</p>
+                    <p class="card-text"><small class="text-muted">{{myProduct.price}}</small></p>
+                    <br />
+                    <!-- <a (click)="addToCart(myProduct)" class="btn btn-primary">add to cart</a> -->
+                </div>
+            </div>
+        </div>
+        <div class="card-footer"><a class="btn btn-info" (click)="onBack()">continue shopping</a></div>
+    </div>
+</div>

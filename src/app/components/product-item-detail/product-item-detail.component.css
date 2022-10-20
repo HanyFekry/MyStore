@@ -3,8 +3,12 @@ img {
   width: 320px;
 }
 
+.card-img {
+  max-height: 400px;
+}
+
 .select-input {
-  width: 108px; 
+  width: 108px;
   margin-bottom: 8px;
 }
 
