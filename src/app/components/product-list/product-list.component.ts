@@ -32,6 +32,7 @@ export class ProductListComponent implements OnInit {
     //   quantity,
     // };
     this.c_service.addToCart(item.product, item.quantity);
+    //notify the user that item added to cart
     alert(item.product.name + ' added to cart');
   }
 }

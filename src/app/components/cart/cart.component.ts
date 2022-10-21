@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { item } from 'src/app/models/item';
 import { CartService } from 'src/app/services/cart.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms'
 
 @Component({
   selector: 'app-cart',
@@ -36,6 +37,7 @@ export class CartComponent implements OnInit {
     this.c_service.deleteItem(item);
     this.totalPrice = this.c_service.calcTotalPrice();
     this.getCartItems();
+    //notify the user that item added to cart
     alert(item.product.name + ' removed from cart');
   }
   onSubmit() {
@@ -50,5 +52,12 @@ export class CartComponent implements OnInit {
   ngOnInit(): void {
     //   this.getCart();
     this.getCartItems()
+
+  }
+  nameChanged(arg: any) {
+    console.log(arg);
+  }
+  cardNoChanged(arg: any) {
+    console.log(arg);
   }
 }

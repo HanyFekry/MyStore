@@ -110,7 +110,7 @@ export class CartService {
     for (let i in shopping_cart) {
       totalPrice += shopping_cart[i].quantity * shopping_cart[i].product.price;
     }
-    return Math.round(totalPrice);
+    return totalPrice;
   }
   numberOfItems() {
     let itemsInCart = JSON.parse(localStorage.getItem(this.cartKey) ?? '');
