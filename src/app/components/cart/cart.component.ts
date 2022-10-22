@@ -14,7 +14,7 @@ export class CartComponent implements OnInit {
   totalPrice: number = 0;
   name: string = '';
   address: string = '';
-  cardNo: string = '';
+  cardNo: number = 0;
 
   constructor(private c_service: CartService, private router: Router) { }
   getCartItems() {

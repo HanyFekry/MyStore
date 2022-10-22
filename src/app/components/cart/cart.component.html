@@ -57,20 +57,14 @@
 
                                     <div class="form-outline mb-5"
                                         ngClass="{'text-danger':custCardNo?.valid && (custCardNo?.dirty || custCardNo?.touched)}">
-                                        <input type="text" id="cardNo" name="cardNo" [(ngModel)]="cardNo" required
-                                            class="form-control form-control-lg" siez="17" minlength="16" maxlength="16"
-                                            #custCardNo="ngModel" (ngModelChange)="cardNoChanged($event)" />
+                                        <input type="number" id="cardNo" name="cardNo" [(ngModel)]="cardNo" required
+                                            class="form-control form-control-lg" siez="17" #custCardNo="ngModel"
+                                            (ngModelChange)="cardNoChanged($event)" />
                                         <label class="form-label" for="cardNo">Card Number</label>
                                         <div *ngIf="!custCardNo?.valid && (custCardNo?.dirty || custCardNo?.touched)"
                                             class="text-danger">
                                             <div *ngIf="custCardNo.errors?.['required']">
                                                 Credit card number is required
-                                            </div>
-                                            <div *ngIf="custCardNo.errors?.['minlength']">
-                                                Credit card number must be 16 charachters
-                                            </div>
-                                            <div *ngIf="custCardNo.errors?.['maxlength']">
-                                                Credit card number must be 16 charachters
                                             </div>
                                         </div>
                                     </div>
@@ -78,23 +72,30 @@
                                     <div class="form-outline mb-5">
                                         <input type="text" id="userName" name="name" [(ngModel)]="name" required
                                             class="form-control form-control-lg" siez="17" #userName="ngModel"
-                                            (ngModelChange)="nameChanged($event)" />
+                                            minlength="10" (ngModelChange)="nameChanged($event)" />
                                         <label class="form-label" for="userName">Name on card</label>
                                         <div *ngIf="userName?.invalid && (userName?.dirty || userName?.touched)"
                                             class="text-danger">
                                             <div *ngIf="userName.errors?.['required']">
                                                 Customer Name is required
                                             </div>
+                                            <div *ngIf="userName.errors?.['minlength']">
+                                                Customer Name must be at least 10 characters
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-outline mb-5">
                                         <input type="text" id="address" name="address" [(ngModel)]="address" required
-                                            class="form-control form-control-lg" siez="17" #custAddress="ngModel" />
+                                            class="form-control form-control-lg" siez="17" #custAddress="ngModel"
+                                            minlength="20" />
                                         <label class="form-label" for="address">Address</label>
                                         <div *ngIf="!custAddress?.valid && (custAddress?.dirty || custAddress?.touched)"
                                             class="text-danger">
                                             <div *ngIf="custAddress.errors?.['required']">
                                                 Address is required
+                                            </div>
+                                            <div *ngIf="custAddress.errors?.['minlength']">
+                                                Address must be at least 20 characters
                                             </div>
                                         </div>
                                     </div>
